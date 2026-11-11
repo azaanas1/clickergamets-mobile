@@ -1,0 +1,142 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080d19">
+
+    <title>ClickerGameTS v2.0 — Beta Program</title>
+
+    <!-- Shared dashboard/sidebar styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Beta page styles -->
+    <link rel="stylesheet" href="beta.css">
+    <script>
+    (() => {
+        function applyTheme(theme) {
+            document.documentElement.dataset.theme =
+                theme === "dark" ? "dark" : "light";
+        }
+
+        try {
+            applyTheme(localStorage.getItem("app_theme"));
+        } catch {
+            applyTheme("light");
+        }
+
+        window.addEventListener("storage", event => {
+            if (event.key === "app_theme") {
+                applyTheme(event.newValue);
+            }
+        });
+    })();
+    </script>
+
+</head>
+
+<body>
+<div class="app-container">
+
+    <!-- Sidebar: matches index.html -->
+    <aside class="sidebar-menu">
+
+        <div class="menu-logo">
+            🐬 clickergamets.pages.dev
+        </div>
+
+        <div class="sidebar-version">
+            v2.0 · THE FARM UPDATE
+        </div>
+
+        <nav aria-label="Main navigation">
+            <ul class="menu-links">
+
+                <li>
+                    <a class="nav-link" href="index.html#dashboard">
+                        🏠 Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="index.html#farm">
+                        🌱 Farm
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="index.html#analytics">
+                        📊 Analytics
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="index.html#settings">
+                        ⚙️ Settings
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="index.html#changelog">
+                        📜 Changelog
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link active-link"
+                       href="beta.html"
+                       aria-current="page">
+                        🧪 Beta Program
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            It's not a bug — it's a feature.
+        </div>
+
+    </aside>
+
+    <!-- Beta content -->
+    <main class="main-content beta-main">
+
+        <section class="beta-card" aria-labelledby="beta-title">
+
+            <div class="beta-logo" aria-hidden="true">🌾</div>
+
+            <span class="beta-badge">
+                BETA ACCESS · V2.0
+            </span>
+
+            <h1 id="beta-title">
+                Welcome to ClickerGameTS Beta!
+            </h1>
+
+            <p>
+                Want to explore experimental ClickerGameTS features?
+                Sign in to your beta account to get started.
+            </p>
+
+            <a
+                class="beta-login-button"
+                href="https://aleemisme.pythonanywhere.com/"
+            >
+                Get Started · Login →
+            </a>
+
+            <footer class="beta-footer">
+                ClickerGameTS™ · v2.0 · The Farm Update
+                <br>
+                It's not a bug — it's a feature.
+            </footer>
+
+        </section>
+
+    </main>
+
+</div>
+</body>
+</html>

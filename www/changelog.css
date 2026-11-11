@@ -1,0 +1,150 @@
+
+/* ClickerGameTS v2.0 — The Farm Update */
+
+.changelog-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+
+.changelog-card {
+    position: relative;
+    overflow: hidden;
+    min-width: 0;
+    padding: 23px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--surface);
+    color: var(--text);
+    box-shadow: var(--shadow);
+    transition: transform .2s ease, border-color .2s ease,
+                box-shadow .2s ease;
+}
+
+.changelog-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+}
+
+.changelog-card:first-child {
+    grid-column: 1 / -1;
+    border: 2px solid var(--green);
+    background:
+        linear-gradient(
+            135deg,
+            var(--surface),
+            var(--surface-alt)
+        );
+}
+
+.changelog-card:first-child::before {
+    content: "🌾 LATEST RELEASE";
+    display: inline-flex;
+    padding: 6px 11px;
+    margin-bottom: 13px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--green) 14%, var(--surface));
+    color: var(--green);
+    font-size: 10px;
+    font-weight: 850;
+    letter-spacing: .7px;
+}
+
+.changelog-card h1,
+.changelog-card h2 {
+    color: var(--text);
+    letter-spacing: -.5px;
+    line-height: 1.35;
+}
+
+.changelog-card h2 {
+    margin: 8px 0 12px;
+    font-size: 19px;
+    font-weight: 850;
+}
+
+.changelog-card h3 {
+    margin: 18px 0 9px;
+    color: var(--text);
+    font-size: 14px;
+}
+
+.changelog-card p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.changelog-card ul,
+.changelog-card .log-items {
+    padding-left: 21px;
+    color: var(--muted);
+}
+
+.changelog-card li {
+    margin: 9px 0;
+    line-height: 1.65;
+}
+
+.changelog-card strong {
+    color: var(--text);
+}
+
+.log-date {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.log-heading {
+    color: var(--text);
+}
+
+.stable-badge,
+.beta-badge,
+.celebration-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    margin: 3px 5px 8px 0;
+    border-radius: 999px;
+    font-size: 9px;
+    font-weight: 850;
+    letter-spacing: .5px;
+}
+
+.stable-badge {
+    color: var(--green);
+    background: color-mix(in srgb, var(--green) 13%, var(--surface));
+}
+
+.beta-badge {
+    color: #d97706;
+    background: color-mix(in srgb, #f59e0b 13%, var(--surface));
+}
+
+.celebration-badge {
+    color: #9333ea;
+    background: color-mix(in srgb, #9333ea 13%, var(--surface));
+}
+
+/* Historical entries */
+.changelog-card:not(:first-child) {
+    border-left: 3px solid var(--accent);
+}
+
+@media (max-width: 760px) {
+    .changelog-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .changelog-card:first-child {
+        grid-column: auto;
+    }
+
+    .changelog-card {
+        padding: 17px;
+    }
+}

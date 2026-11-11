@@ -1,0 +1,177 @@
+
+/* =========================================
+   ClickerGameTS v2.0
+   Beta Program Stylesheet
+   ========================================= */
+
+/* Main layout */
+
+.beta-main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background:
+        radial-gradient(
+            ellipse at top,
+            rgba(56, 189, 248, 0.09),
+            transparent 55%
+        );
+}
+
+/* Beta card */
+
+.beta-card {
+    width: 100%;
+    max-width: 620px;
+    padding: 45px 35px;
+    text-align: center;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+
+    box-shadow: var(--shadow);
+
+    animation: beta-enter 0.45s ease;
+}
+
+/* Logo */
+
+.beta-logo {
+    font-size: 58px;
+    margin-bottom: 16px;
+}
+
+/* Badge */
+
+.beta-badge {
+    display: inline-block;
+    padding: 7px 13px;
+
+    border: 1px solid rgba(34, 197, 94, 0.35);
+    border-radius: 999px;
+
+    color: #4ade80;
+    background: rgba(34, 197, 94, 0.10);
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* Heading */
+
+.beta-card h1 {
+    margin: 22px 0 14px;
+    color: var(--text);
+
+    font-size: clamp(27px, 5vw, 38px);
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+}
+
+/* Description */
+
+.beta-card p {
+    max-width: 470px;
+    margin: 0 auto;
+
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* Login button */
+
+.beta-login-button {
+    display: inline-block;
+    margin-top: 27px;
+    padding: 14px 30px;
+
+    border-radius: 12px;
+
+    background: var(--accent);
+    color: #06121c;
+
+    font-size: 14px;
+    font-weight: 850;
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.beta-login-button:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.12);
+    box-shadow: 0 8px 25px rgba(56, 189, 248, 0.2);
+}
+
+.beta-login-button:focus-visible {
+    outline: 3px solid var(--text);
+    outline-offset: 4px;
+}
+
+/* Footer */
+
+.beta-footer {
+    margin-top: 35px;
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+/* Entry animation */
+
+@keyframes beta-enter {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+
+@media (max-width: 760px) {
+    .beta-main {
+        padding: 20px;
+    }
+
+    .beta-card {
+        padding: 35px 23px;
+    }
+}
+
+@media (max-width: 420px) {
+    .beta-card h1 {
+        font-size: 27px;
+    }
+
+    .beta-login-button {
+        width: 100%;
+        padding: 14px 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .beta-card {
+        animation: none;
+    }
+
+    .beta-login-button {
+        transition: none;
+    }
+}

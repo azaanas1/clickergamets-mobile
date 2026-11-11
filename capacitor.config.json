@@ -1,0 +1,6 @@
+{
+  "appId": "com.cgtgames.clickergamets.mobile",
+  "appName": "ClickerGameTS Mobile",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d19">
+  <meta name="description" content="ClickerGameTS v2.0 — The Farm Update">
+  <title>ClickerGameTS v2.0 — The Farm Update</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+    
+    <link rel="stylesheet" href="./changelog.css?v=2.0.1">
+</head>
+<body>
+<div class="app-container">
+  <aside class="sidebar-menu">
+    <div class="menu-logo">🐬 clickergamets.pages.dev</div>
+    <div class="sidebar-version">v2.0 · THE FARM UPDATE</div>
+    <nav aria-label="Main navigation">
+      <ul class="menu-links">
+        <li><a class="nav-link active-link" href="#dashboard" data-page="dashboard">🏠 Dashboard</a></li>
+        <li><a class="nav-link" href="#farm" data-page="farm">🌱 Farm</a></li>
+        <li><a class="nav-link" href="#analytics" data-page="analytics">📊 Analytics</a></li>
+        <li><a class="nav-link" href="#settings" data-page="settings">⚙️ Settings</a></li>
+        <li><a class="nav-link" href="#changelog" data-page="changelog">📜 Changelog</a></li>
+        <li>
+          <a class="nav-link" href="beta.html">
+            🧪 Beta Program
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="sidebar-footer">It's not a bug — it's a feature.</div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">CGTGAMES · GAMES · TOOLS · EXPERIMENTS</p>
+        <h1 id="page-title">ClickerGameTS <span>v2.0</span></h1>
+        <p class="subtitle" id="page-subtitle">The Farm Update — click, grow, harvest, repeat.</p>
+      </div>
+      <div class="topbar-status"><span class="status-dot"></span><span id="save-status" role="status">All progress saved</span></div>
+    </header>
+
+    <section class="page active-page" id="page-dashboard" data-title="Dashboard" data-subtitle="Build your clicks, upgrade your power, and keep the combo alive.">
+      <div class="hero-banner">
+        <div><span class="pill">🌊 TSUNAMI ENGINE · FARM EXPANSION</span><h2 id="welcome-banner">Welcome back, clicker.</h2><p>Your clicks now power a whole farm. Spend them wisely.</p></div>
+        <div class="hero-emoji" aria-hidden="true">🌾</div>
+      </div>
+      <div class="game-grid">
+        <section class="dashboard-card clicker-card">
+          <div class="card-heading"><div><p class="eyebrow">YOUR BALANCE</p><h2><span id="counter-display">0</span> clicks</h2></div><span class="balance-icon">🖱️</span></div>
+          <p class="muted">Click power: <strong id="power-display">1</strong> per click</p>
+          <div class="combo-panel"><div class="combo-line"><span id="combo-display">Combo ×1.0</span><span id="combo-bonus-text">Keep clicking!</span></div><div class="progress-track"><div id="combo-progress" class="progress-fill"></div></div></div>
+          <button id="my-btn" class="primary-button click-button">CLICK! <span>＋</span></button>
+          <div class="button-row"><button id="reset-btn" class="danger-button">Reset game</button><span id="dolphin-status" class="muted">🐬 Dolphin is chilling.</span></div>
+          <p id="dolphin-message" class="dolphin-message">It's not a bug — it's a feature.</p>
+        </section>
+        <div class="shop-column">
+          <section class="dashboard-card"><div class="section-title"><h2>🛒 Click upgrades</h2><span class="pill">SPEND CLICKS</span></div>
+            <article class="upgrade-card"><div class="upgrade-icon">💪</div><div class="upgrade-copy"><h3>Super Click</h3><p>Increase manual click power.</p><small>Owned: <b id="super-owned">0</b> · Cost: <b id="super-cost-text">25</b></small></div><button id="buy-super-click" class="buy-button">Buy</button></article>
+            <article class="upgrade-card"><div class="upgrade-icon">🤖</div><div class="upgrade-copy"><h3>Auto Clicker</h3><p>Generate clicks automatically.</p><small>Owned: <b id="auto-owned">0</b> · Cost: <b id="auto-cost-text">100</b></small></div><button id="buy-auto-click" class="buy-button">Buy</button></article>
+            <article class="upgrade-card"><div class="upgrade-icon">⚛️</div><div class="upgrade-copy"><h3>Quantum Chip</h3><p>Boost passive production.</p><small>Owned: <b id="chip-owned">0</b> · Cost: <b id="chip-cost-text">500</b></small></div><button id="buy-quantum-chip" class="buy-button">Buy</button></article>
+          </section>
+          <section class="dashboard-card prestige-card"><div><p class="eyebrow">ASCEND YOUR RUN</p><h2>✨ Prestige</h2><p id="prestige-info" class="muted">Earn a permanent multiplier at 5,000 clicks.</p></div><button id="prestige-btn" class="prestige-button">Prestige</button></section>
+        </div>
+      </div>
+      <section class="dashboard-card"><div class="section-title"><h2>🏆 Milestones</h2><span id="achievement-badge" class="pill">0 unlocked</span></div><div id="milestone-list" class="milestone-grid"></div><div id="achievement-list" class="sr-only"></div></section>
+    </section>
+
+    <section class="page" id="page-farm" data-title="Farm" data-subtitle="Buy seeds with clicks, plant open plots, then harvest crops for more clicks.">
+      <div class="farm-summary">
+        <div class="summary-card"><span>🌱</span><div><small>Available plots</small><strong id="plots-available">4</strong></div></div>
+        <div class="summary-card"><span>🌾</span><div><small>Total harvested</small><strong id="crops-harvested">0</strong></div></div>
+        <div class="summary-card"><span>💰</span><div><small>Farm earnings</small><strong id="farm-earned">0</strong></div></div>
+      </div>
+      <div class="farm-layout">
+        <section class="dashboard-card"><div class="section-title"><h2>🧺 Seed shop</h2><span class="pill">COSTS CLICKS</span></div><p class="muted">Your regular click balance is the farm currency too.</p><div id="seed-shop" class="seed-shop"></div></section>
+        <section class="dashboard-card"><div class="section-title"><h2>🌿 Your fields</h2><span id="farm-level" class="pill">Farm level 1</span></div><p class="muted">Plant a seed in an empty plot. Growth only advances while the game is open.</p><div id="farm-plots" class="farm-plots"></div><div class="farm-upgrades"><h3>Farm improvements</h3><div class="farm-upgrade-row"><div><b>🪴 Extra plot</b><p class="muted">Unlock one more field slot.</p><small>Cost: <span id="plot-cost">2,000</span> clicks</small></div><button id="buy-plot" class="buy-button">Unlock</button></div><div class="farm-upgrade-row"><div><b>💧 Better watering</b><p class="muted">Crops grow 20% faster per upgrade.</p><small>Owned: <span id="water-level">0</span> · Cost: <span id="water-cost">1,500</span></small></div><button id="buy-water" class="buy-button">Upgrade</button></div></div></section>
+      </div>
+    </section>
+
+    <section class="page" id="page-analytics" data-title="Analytics" data-subtitle="A quick look at your clicker and farming career.">
+      <div class="stats-grid">
+        <div class="stat-card"><span>🖱️</span><small>Lifetime clicks</small><strong id="total-clicks-stat">0</strong></div>
+        <div class="stat-card"><span>🔥</span><small>Best combo</small><strong id="best-combo-stat">0</strong></div>
+        <div class="stat-card"><span>🎯</span><small>Critical hits</small><strong id="crit-stat">0</strong></div>
+        <div class="stat-card"><span>✨</span><small>Click multiplier</small><strong id="multiplier-stat">×1</strong></div>
+        <div class="stat-card"><span>🌾</span><small>Crops harvested</small><strong id="analytics-harvested">0</strong></div>
+        <div class="stat-card"><span>🚜</span><small>Total farm earnings</small><strong id="analytics-farm-earned">0</strong></div>
+      </div>
+      <section class="dashboard-card"><h2>📈 Production overview</h2><p class="muted" id="production-overview">You are just getting started.</p><p class="muted">Passive production: <strong id="passive-rate">0</strong> clicks/sec (approximate).</p></section>
+    </section>
+
+    <section class="page" id="page-settings" data-title="Settings" data-subtitle="Personalize the game and manage your local save.">
+      <section class="dashboard-card settings-card"><h2>⚙️ Game settings</h2><label class="setting-row"><span><b>Username</b><small>Shown in your welcome message.</small></span><input id="username-input" type="text" maxlength="24" placeholder="Clicker"></label><label class="setting-row"><span><b>Theme</b><small>Switch between light and dark mode.</small></span><button id="theme-toggle-btn" class="buy-button">Toggle theme</button></label><div class="setting-row"><span><b>Save status</b><small>Progress is saved locally in this browser.</small></span><span id="settings-save-status" class="pill">Local save</span></div><div class="setting-row"><span><b>Export save</b><small>Download a backup of your game.</small></span><button id="export-save" class="buy-button">Export JSON</button></div><div class="setting-row"><span><b>Import save</b><small>Restore a previously exported JSON save.</small></span><input id="import-save-file" type="file" accept="application/json,.json"></div><p class="muted">Import replaces this browser's current game progress. Export first if you want a backup.</p></section>
+    </section>
+
+    <section class="page" id="page-changelog" data-title="Changelog" data-subtitle="From the ocean to the farm.">
+  <div id="changelog-content">
+    <p class="muted">Loading version history...</p>
+  </div>
+</section>
+
+    <footer class="app-footer">ClickerGameTS™ v2.0 · The Farm Update <span>⚠️ This CGT may contain nonsense. Use at your own risk.</span></footer>
+  </main>
+</div>
+<div id="toast-region" class="toast-region" aria-live="polite"></div>
+</body>
+</html>
